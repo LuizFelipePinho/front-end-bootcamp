@@ -1,0 +1,12 @@
+
+.section {
+  font-family: "Verdana";
+}
+
+.section:hover {
+  color: rgb(252, 8, 8);
+  font-size:1.2em;
+  transition-timing-function: ease-in-out;
+}
+
+
