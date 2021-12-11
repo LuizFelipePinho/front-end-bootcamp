@@ -8,7 +8,7 @@ import Section from "./Components/Section/Section";
 import Collection from "./Components/Pages/Collection/Collection";
 import Products from "./Components/Pages/Products/Products";
 import Newsletter from "./Components/Pages/Newsletter/Newsletter";
-
+import Carrinho from "./pages/Carrinho/Carrinho"
 ReactDOM.render(
   <React.StrictMode>
     <Header />
