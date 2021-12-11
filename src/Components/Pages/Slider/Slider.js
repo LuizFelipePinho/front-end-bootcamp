@@ -1,4 +1,4 @@
-import "./Products.css";
+import "./Slider.css";
 import { BsSuitHeartFill } from "react-icons/bs";
 import { BsCartFill } from "react-icons/bs";
 import { MdOutlineAttachMoney } from "react-icons/md";
@@ -19,18 +19,28 @@ export default function Section() {
   return (
     <nav className="container">
       <div class="col-md-12">
-						<div class="section-title">
-							<h3 class="title">New Products</h3>
-							<div class="section-nav">
-								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-									<li><a href="#">Smartphones</a></li>
-									<li><a  href="#">Cameras</a></li>
-									<li><a href="#">Accessories</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+        <div class="section-title">
+          <h3 class="title">New Products</h3>
+          <div class="section-nav">
+            <ul class="section-tab-nav tab-nav">
+              <li class="active">
+                <a data-toggle="tab" href="#tab1">
+                  Laptops
+                </a>
+              </li>
+              <li>
+                <a href="#">Smartphones</a>
+              </li>
+              <li>
+                <a href="#">Cameras</a>
+              </li>
+              <li>
+                <a href="#">Accessories</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="card-group">
         <div class="card">
           <img src={product01} class="card-img-top" alt="..." />
