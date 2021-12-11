@@ -3,7 +3,7 @@ import logo from "./img/logo.png";
 
 export default function Navbar() {
   return (
-    
+    <div className="container-nav">
       <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -23,19 +23,20 @@ export default function Navbar() {
               <option value="Cameras Collection">Cameras Collection</option>
             </select>
             <br />
-            <input
-              className="form-control me-2"
-              id="search-form"
-              type="search"
-              placeholder="Search here"
-              aria-label="Search"
-            />
+            <div>
+              <input
+                class="form-control me-4"
+                type="search"
+                placeholder="Search here"
+                aria-label="Search"
+              />
+            </div>
             <button class="btn btn-danger" type="submit">
               Search
             </button>
           </form>
         </div>
       </nav>
-    
+    </div>
   );
 }

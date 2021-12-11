@@ -1,15 +1,8 @@
-.container {
-  padding-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 40px;
-}
 
 .card-body {
   background-color: crimson;
   color: white;
   width: fit-content;
-  
 }
 
 .card-title {
@@ -19,4 +12,3 @@
 .icons {
   color: white;
 }
-
