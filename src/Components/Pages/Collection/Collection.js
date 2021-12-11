@@ -12,7 +12,7 @@ export default function Section() {
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <div class="card">
-          <img src={shop01} />
+          <img src={shop01} className='img'/>
           <div class="card-body">
             <h5 class="card-title">Laptop Collection</h5>
             <p class="card-text">
@@ -23,7 +23,7 @@ export default function Section() {
       </div>
       <div class="col">
         <div class="card">
-          <img src={shop03} className='img-collection'/>
+          <img src={shop03} className='img'/>
           <div class="card-body">
             <h5 class="card-title">Accessories Collection</h5>
             <p class="card-text">
@@ -34,7 +34,7 @@ export default function Section() {
       </div>
       <div class="col">
         <div class="card">
-          <img src={shop02} />
+          <img src={shop02} className='img'/>
           <div class="card-body">
             <h5 class="card-title">Cameras Collection</h5>
             <p class="card-text">
