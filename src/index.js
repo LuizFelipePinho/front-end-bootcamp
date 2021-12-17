@@ -3,23 +3,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Header from "./Components/Shared/Header/Header";
-import Navbar from "./Components/Shared/Navbar/Navbar";
-import Section from "./Components/Shared/Section/Section";
-import Collection from "./Components/Pages/Collection/Collection";
-
-import Products from "./Components/Pages/Products/Products";
-import Newsletter from "./Components/Pages/Newsletter/Newsletter";
-import Carrinho from "./pages/Carrinho/Carrinho"
-import Slider from "./Components/Pages/Slider/Slider";
-import Footer from "./Components/Shared/Footer/Footer";
+import Pages from './Components/Pages/Pages'
+import Footer from './Components/Shared/Footer/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
-    <Navbar />
-    <Section />
-    <Collection />
-    <Slider />
+    <Pages/>
     <Footer />
   </React.StrictMode>,
   document.getElementById("root")

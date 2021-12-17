@@ -1,0 +1,16 @@
+.form-select {
+  margin-right: -4px;
+  border-radius: 40px 0px 0px 40px;
+  justify-content: space-around;
+}
+
+.container-nav {
+  border-bottom: 3px solid #d10024;
+}
+
+.form-control {
+  margin-right: -4px;
+  border-radius: 0px 40px 40px 0px;
+}
+
+
