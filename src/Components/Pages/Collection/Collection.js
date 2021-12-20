@@ -14,7 +14,7 @@ export default function Section() {
         <div class="card">
           <img src={shop01} className='img'/>
           <div class="card-body">
-            <h5 class="card-title">Laptop Collection</h5>
+            <h5 class="card-title">Notebook Collection</h5>
             <p class="card-text">
               SHOP NOW <AiOutlineRightCircle className="icons" />
             </p>
@@ -36,7 +36,7 @@ export default function Section() {
         <div class="card">
           <img src={shop02} className='img'/>
           <div class="card-body">
-            <h5 class="card-title">Cameras Collection</h5>
+            <h5 class="card-title">Gamer Experience</h5>
             <p class="card-text">
               SHOP NOW <AiOutlineRightCircle className="icons" />
             </p>

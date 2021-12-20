@@ -1,16 +1,4 @@
 import "./Footer.css";
-import {
-  FaPhoneAlt,
-  FaRegEnvelope,
-  FaMapMarkerAlt,
-  FaCcMastercard,
-  FaCcVisa,
-  FaCcPaypal,
-  FaCreditCard,
-  FaCcDiscover,
-  FaCcAmex,
-} from "react-icons/fa";
-
 import { BsSuitHeartFill } from "react-icons/bs";
 
 export default function Footer() {
@@ -57,14 +45,14 @@ export default function Footer() {
               <h3 class="footer-title">Categories</h3>
               <ul class="footer-links">
                 <li>
-                  <a href="#">Hot deals</a>
+                  <a href="#">Notebooks</a>
                 </li>
                 <li>
-                  <a href="#">Laptops</a>
+                  <a href="#">Acessories</a>
                 </li>
 
                 <li>
-                  <a href="#">Accessories</a>
+                  <a href="#">Gamer Experience</a>
                 </li>
               </ul>
             </div>
@@ -72,8 +60,7 @@ export default function Footer() {
         </div>
         <div class="col-md-12 text-center">
           <span className="copyright">
-            Copyright ©2021 All rights reserved | Made with <BsSuitHeartFill />{" "}
-            by Equipe 04
+            Copyright ©2021 All rights reserved | Made with <BsSuitHeartFill /> by Equipe 04
           </span>
         </div>
       </div>
