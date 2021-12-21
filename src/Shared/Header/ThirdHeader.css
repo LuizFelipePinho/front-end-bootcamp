@@ -1,0 +1,5 @@
+
+.section:hover {
+  color: #d10024;
+  transition-timing-function: ease-in-out;
+}
