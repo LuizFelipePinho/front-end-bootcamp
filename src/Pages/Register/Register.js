@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
-import '../Register/Register.css';
+import './Register.css';
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
 
 export default function Register()  {

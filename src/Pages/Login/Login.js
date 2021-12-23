@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
-import './../Login/Login.css';
+import './Login.css';
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
 
 export default function Login()  {
