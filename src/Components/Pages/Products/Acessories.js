@@ -1,4 +1,5 @@
 import "./Product.css";
+import {Link } from 'react-router-dom';
 
 import ProductsCard from "./ProductsCard";
 import product01 from "./img/product01.png";

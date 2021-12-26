@@ -1,11 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Shared/Header";
 import Home from "./Components/Pages/Home";
+import Login from './Components/Pages/Login/Login';
+import Register from './Components/Pages/Register/Register';
 import Notebooks from './Components/Pages/Products/Notebooks';
 import Acessories from './Components/Pages/Products/Acessories';
 import Gamer from './Components/Pages/Products/Gamer';
-import Login from './Components/Pages/Login/Login';
-import Register from './Components/Pages/Register/Register';
+import Detail from './Components/Pages/Products/ProductDetail';
 import Cart from './Components/Pages/Cart/Cart';
 import AddProduct from './Components/Pages/AddProduct/AddProduct';
 import Finish from './Components/Pages/Finish/Finish';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/notebooks" element={<Notebooks />} />
         <Route path="/acessories" element={<Acessories />} />
         <Route path="/gamer" element={<Gamer />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
       <Footer />
     </Router>

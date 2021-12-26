@@ -1,12 +1,11 @@
-
 import "./ProductsCard.css";
+import { Link } from "react-router-dom";
 
-import { Card, Row, Col, Button } from "react-bootstrap/";
-import { FaRegHeart, FaRegEye, FaSearch } from "react-icons/fa";
+import { Card, Row, Col, Button } from "react-bootstrap";
+import { FaRegHeart, FaRegEye } from "react-icons/fa";
 import product01 from "./img/product01.png";
 
 function ProductsCard() {
- 
   return (
     <div>
       <Row xs={1} md={3} className="g-4">
@@ -25,12 +24,16 @@ function ProductsCard() {
                   <Button variant="danger" align="center">
                     <FaRegHeart />
                   </Button>{" "}
-                  <Button variant="danger" align="center">                
-                    <FaRegEye />
-                  </Button>{" "}
+                  <Link to="/detail">
                   <Button variant="danger" align="center">
-                    Add To Cart
+                    <FaRegEye />                    
                   </Button>{" "}
+                  </Link>
+                  <Link to="/cart">
+                    <Button variant="danger" align="center">
+                      Add To Cart
+                    </Button>{" "}
+                  </Link>
                 </>
               </Card.Body>
             </Card>
