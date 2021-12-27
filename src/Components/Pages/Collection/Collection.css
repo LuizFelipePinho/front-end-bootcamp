@@ -1,0 +1,22 @@
+.container{
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.card-body {
+    background-color: crimson;
+    color: white;
+    width: fit-content;
+    
+  }
+  
+  .card-title {
+    color: white;
+  }
+  
+  .icons {
+    color: white;
+  }
+
+  .img{
+    width: 100%;  
+  }

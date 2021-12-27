@@ -1,4 +1,4 @@
-.nav-item {
+.item {
   font-size: 1rem;
   text-decoration: none;
 }
@@ -8,3 +8,7 @@
   font-size: 1rem;
 }
 
+
+.firstHeader{
+  border-bottom: 3px solid #111111;
+}
