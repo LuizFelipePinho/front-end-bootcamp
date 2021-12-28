@@ -9,36 +9,38 @@ export default function Header() {
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <Link to="/login">
+            <Link to="/register">
               <li class="nav-item">
-                <a class="nav-link active">
+                <p class="nav-link active">
                   <FaUserAstronaut className="icon" /> I want to sell !
-                </a>
+                </p>
               </li>
             </Link>
             <Link to="/login">
               <li class="nav-item">
-              <a class="nav-link active">
+              <p class="nav-link active">
                   <FaRegUser className="icon" /> I want to buy !
-                </a>
+                </p>
               </li>
             </Link>
           </ul>
           <ul class="navbar-nav me-end">
-            <Link to="/cart">
+            <Link to="/login">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <p class="nav-link active" href="#">
                   <FaUserCheck className="icon" /> My Account
-                </a>
+                </p>
               </li>
             </Link>
             <Link to="/cart">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <p class="nav-link active" href="#">
                   <BsCartFill className="icon" /> Cart
-                </a>
+                </p>
               </li>
             </Link>
+
+            
           </ul>
         </div>
       </div>
