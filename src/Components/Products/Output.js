@@ -1,9 +1,8 @@
 import "./Product.css";
-
-import ProductsCard from "./ProductsCard";
 import product01 from "./img/product01.png";
 import product02 from "./img/product02.png";
 import product03 from "./img/product03.png";
+import Output from "./Output/Output";
 
 export default function Acessories() {
   return (
@@ -184,7 +183,7 @@ export default function Acessories() {
                     <a href="#">product name goes here</a>
                   </h3>
                   <h4 class="product-price">
-                    $980.00 <del class="product-old-price">$990.00</del>
+                    $90000080.00 <del class="product-old-price">$990.00</del>
                   </h4>
                 </div>
               </div>
@@ -204,9 +203,8 @@ export default function Acessories() {
               </div>
             </div>
 
-            <ProductsCard />
-            
-
+           <Output/>
+          
             <div class="store-filter clearfix">
               <span class="store-qty">Showing 9-100 products</span>
               <ul class="store-pagination">
