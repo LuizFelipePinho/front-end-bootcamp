@@ -11,13 +11,16 @@ export default function Gallery() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/notebooks">Notebooks</Link>
+              <Link to="/input">Input</Link>
             </li>
             <li>
-              <Link to="/acessories">Acessories</Link>
+              <Link to="/output">Output</Link>
             </li>
             <li>
-              <Link to="/gamer">Gamer Experience</Link>
+              <Link to="/processing">Processing</Link>
+            </li>
+            <li>
+              <Link to="/storage">Storage</Link>
             </li>
           </ul>
         </div>
