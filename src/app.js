@@ -3,9 +3,6 @@ import Header from "./Components/Shared/Header";
 import Home from "./Pages/Home";
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-// import Notebooks from './Components/Products/Notebooks';
-// import Acessories from './Components/Products/Acessories'
-// import Gamer from './Components/Products/Gamer';
 import Input from './Components/Products/Input';
 import Output from './Components/Products/Output'
 import Processing from './Components/Products/Processing';
@@ -27,14 +24,11 @@ function App() {
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/register" element={<Register />} />
         <Route path="/finish" element={<Finish />} />
-        {/* <Route path="/notebooks" element={<Notebooks />} /> */}
-        {/* <Route path="/acessories" element={<Acessories />} /> */}
-        {/* <Route path="/gamer" element={<Gamer />} /> */}
         <Route path="/input" element={<Input />} />
         <Route path="/output" element={<Output />} />
         <Route path="/processing" element={<Processing />} />
         <Route path="/storage" element={<Storage />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

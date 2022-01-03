@@ -91,8 +91,6 @@ export default function Processing(){
         
            { category.map((item, index) => (
                         <Card key={index}>
-                            {/* <div>{index }</div> */}
-                            {/* <td>{item.hardwerEntrada}</td> */}
                             {item.products.map((p, i) => (
                                 <React.Fragment key={i}>
                                   <CardCover>
@@ -116,7 +114,7 @@ export default function Processing(){
                                     <Btn >
                                       <FaRegHeart />
                                     </Btn>{" "}
-                                    <Link to="/detail">
+                                    <Link to={`/detail/${p.id}`}>
                                     <Btn>
                                       <FaRegEye />                    
                                     </Btn>{" "}
