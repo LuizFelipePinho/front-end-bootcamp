@@ -5,7 +5,7 @@ import authProfile from '../../api/authProfile';
 import CardUnique from '../../Components/CardVendor/CardVendor';
 import { Row } from "react-bootstrap";
 
-export default function Profile(props) {
+export default function Profile() {
 
   const [user, setUser] = useState({});
   const [mounted, setMounted] = useState(false);
@@ -19,22 +19,27 @@ export default function Profile(props) {
 
     if(dataUser) {
 
+      
+
+
       const data = {
         id: dataUser.vendedor.id,
         role: dataUser.vendedor.role
       }
 
       
-      authProfile.getProfile(data)
-      .then(response => {
-        setNotLogged(false)
-        setUser(response.data)
-        console.log(response.data)
-      })
-      .catch( (err) => console.log(err))
+      const dados = authProfile.getProfile(data) 
+      console.log(dados)
+      // authProfile.getProfile(data)
+      // .then(response => {
+      //   setNotLogged(false)
+      //   setUser(response.data)
+      //   console.log(response.data)
+      // })
+      // .catch( (err) => console.log(err))
     }
 
-  }, [mounted])
+  }, [dataUser])
 
   return (
     <div className='profile'>
@@ -44,7 +49,7 @@ export default function Profile(props) {
             <h2>{user.name}</h2>
             <span>Email: {user.email}</span>
             <span>CPF: {user.cpf}</span>
-            <span>Tipo: {(user.role).toLowerCase()}</span>
+            {/* <span>Tipo: {(user.role).toLowerCase()}</span> */}
             {console.log(user.products)}
 
             <Row xs={1} md={6} className="g-4">
@@ -56,5 +61,6 @@ export default function Profile(props) {
         )
       }
     </div>
-  )
+    // <p>foi caralho</p>
+    )
 }

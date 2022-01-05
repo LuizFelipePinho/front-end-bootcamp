@@ -42,7 +42,7 @@ export default function Login() {
   useEffect( () => {
     if(user) {
       authLogin.saveDataUser(user)
-      navigate('/profile')
+      // navigate('/profile')
 
     }
   }, [navigate, user])
