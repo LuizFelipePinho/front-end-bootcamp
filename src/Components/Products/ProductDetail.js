@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaRegHeart, FaRegEye } from "react-icons/fa";
-import product01 from "./img/product01.png";
 import { Container, Button, Row, Col } from "react-bootstrap";
+import axios from "axios";
 
 function ProductDetail() {
+   const [product, setProduct] = useState([]);
+    
+   const getProductById = async () => {
+    await axios.get(`/product/find/${ id}`)
+    .then(response => {
+        setProduct(response.data)
+      
+    })
+
+   }
+
+   const { id } = useParams();
+
+   useEffect(() => {
+     getProductById()
+   },[])
+
+   
   return (
     <Container>
       <Row>
         <Col>
-          <img src={product01} />
+          <img src={product.productPhotosHard} alt="imagem do produto" />
         </Col>
         <Col>
-          <h1 class="display-3">Note Asus 251</h1>
-          <h1 class="display-6">Store: Seller's Store</h1>
-          <h1 class="display-6">$:</h1>
+          <h1 class="display-3">{product.modelHard}</h1>
+          <h1 class="display-6">Store: {product.vendedorId}</h1>
+          <h1 class="display-6">$:{product.priceHard}</h1>
           <Button variant="danger" align="center">
             <FaRegHeart />
           </Button>{" "}
@@ -38,6 +57,9 @@ function ProductDetail() {
           </div>
         </Col>
       </Row>
+
+
+
     </Container>
   );
 }

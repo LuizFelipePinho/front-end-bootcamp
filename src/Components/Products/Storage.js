@@ -1,12 +1,29 @@
 import "./Product.css";
-import {Link } from 'react-router-dom';
 
-import ProductsCard from "./ProductsCard";
+import ProductsCard from "./Storage";
 import product01 from "./img/product01.png";
 import product02 from "./img/product02.png";
 import product03 from "./img/product03.png";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Storage from "./Storage/Storage";
 
 export default function Acessories() {
+    
+  const [category, setCategory] = useState([]);
+
+  const getData = async () => {
+    await axios.get('/categorias/input')
+    .then(response => {
+        setCategory(response.data)
+        
+        
+    })
+
+  }
+  useEffect( () => {
+    getData()
+  },[])
   return (
     <div class="section">
       <div class="container">
@@ -185,7 +202,7 @@ export default function Acessories() {
                     <a href="#">product name goes here</a>
                   </h3>
                   <h4 class="product-price">
-                    $980.00 <del class="product-old-price">$990.00</del>
+                    $90000080.00 <del class="product-old-price">$990.00</del>
                   </h4>
                 </div>
               </div>
@@ -205,7 +222,8 @@ export default function Acessories() {
               </div>
             </div>
 
-            <ProductsCard />
+           <Storage/>
+               
 
             <div class="store-filter clearfix">
               <span class="store-qty">Showing 9-100 products</span>
