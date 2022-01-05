@@ -28,15 +28,14 @@ export default function Profile() {
       }
 
       
-      const dados = authProfile.getProfile(data) 
-      console.log(dados)
-      // authProfile.getProfile(data)
-      // .then(response => {
-      //   setNotLogged(false)
-      //   setUser(response.data)
-      //   console.log(response.data)
-      // })
-      // .catch( (err) => console.log(err))
+      // const dados = authProfile.getProfile(data) 
+      authProfile.getProfile(data)
+      .then(response => {
+        console.log(response.data)
+        setUser(response.data)
+        setNotLogged(false)
+      })
+      .catch( (err) => console.log(err))
     }
 
   }, [dataUser])
