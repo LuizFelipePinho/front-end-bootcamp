@@ -12,6 +12,7 @@ import Cart from './Pages/Cart/Cart';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import Finish from './Pages/Finish/Finish';
 import Footer from "./Components/Shared/Footer";
+import Profile from "./Pages/Profile/Profile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/register" element={<Register />} />
