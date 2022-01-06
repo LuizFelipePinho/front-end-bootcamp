@@ -6,25 +6,10 @@ import product02 from "./img/product02.png";
 import product03 from "./img/product03.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Input from "./Input/Input";
 import Processing from "./Processing/Processing";
 
 export default function Acessories() {
     
-  const [category, setCategory] = useState([]);
-
-  const getData = async () => {
-    await axios.get('/categorias/input')
-    .then(response => {
-        setCategory(response.data)
-        
-        
-    })
-
-  }
-  useEffect( () => {
-    getData()
-  },[])
   return (
     <div class="section">
       <div class="container">

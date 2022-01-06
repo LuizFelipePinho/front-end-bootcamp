@@ -1,48 +1,65 @@
 import './Profile.css';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import authLogin from '../../api/authLogin';
+import authProfile from '../../api/authProfile';
+import CardUnique from '../../Components/CardVendor/CardVendor';
+import { Row } from "react-bootstrap";
 
-export default function Profile(props) {
+export default function Profile() {
 
   const [user, setUser] = useState({});
   const [mounted, setMounted] = useState(false);
   const [notLogged, setNotLogged] = useState(true);
+  const dataUser = authLogin.getDataUser();
+
+  
 
   useEffect(() => {
     setMounted(true)
 
-    if(localStorage.token) {
-      const token = localStorage.token;
+    if(dataUser) {
 
-      const config = {
-        headers: { Authorization: `Bearer ${token}`}
+      
+
+
+      const data = {
+        id: dataUser.vendedor.id,
+        role: dataUser.vendedor.role
       }
 
-      axios.get('/auth/me', config)
+      
+      // const dados = authProfile.getProfile(data) 
+      authProfile.getProfile(data)
       .then(response => {
-        setNotLogged(false)
+        console.log(response.data)
         setUser(response.data)
+        setNotLogged(false)
       })
+      .catch( (err) => console.log(err))
     }
 
-  }, [mounted])
+  }, [dataUser])
 
   return (
     <div className='profile'>
-      <div className='profile-img'>
-        <img src='https://www.reicobraadesivos.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/a/r/ar-89.jpg' alt='Mario' />
-      </div>
       {
         !notLogged ? (
           <>
             <h2>{user.name}</h2>
             <span>Email: {user.email}</span>
-            <span>Membro desde: {user.createdAt}</span>
+            <span>CPF: {user.cpf}</span>
+            {/* <span>Tipo: {(user.role).toLowerCase()}</span> */}
+            {console.log(user.products)}
+
+            <Row xs={1} md={6} className="g-4">
+            { user.products.map( (prod) => <CardUnique data={prod}/>) }
+            </Row>
           </>
         ) : (
           <h2>Sem dados do perfil, faça login</h2>
         )
       }
     </div>
-  )
+    // <p>foi caralho</p>
+    )
 }

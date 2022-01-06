@@ -10,20 +10,6 @@ import Input from "./Input/Input";
 
 export default function Acessories() {
     
-  const [category, setCategory] = useState([]);
-
-  const getData = async () => {
-    await axios.get('/categorias/input')
-    .then(response => {
-        setCategory(response.data)
-        
-        
-    })
-
-  }
-  useEffect( () => {
-    getData()
-  },[])
   return (
     <div class="section">
       <div class="container">

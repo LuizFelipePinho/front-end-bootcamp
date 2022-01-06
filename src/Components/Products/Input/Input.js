@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import { Card, Row, Col, Button, Container } from "react-bootstrap";
 import { FaRegHeart, FaRegEye , FaShoppingCart} from "react-icons/fa";
 import "../ProductsCard.css";
 import styled from "styled-components";
@@ -13,8 +12,8 @@ const Container=styled.div`
 
 `;
 const Card= styled.div`
-  max-width: 19rem;
-  height:27rem;
+  width: 19rem;
+  height:29rem;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 0.4rem;
   margin: 1rem
@@ -22,12 +21,13 @@ const Card= styled.div`
 const CardCover= styled.div`
   max-width: 100%;
   height: 13.5rem;
-  border: 0 0 02rem 0
+  border: 0 0 02rem 0;
   display: flex ;
   justify-content: center;
+  aling-item: center;
 `;
 const Img= styled.img`
- max-width:13.5rem;
+  width:13.5rem;
   height: 12rem;
 `;
 const CardContent= styled.div`
@@ -91,8 +91,6 @@ export default function Processing(){
         
            { category.map((item, index) => (
                         <Card key={index}>
-                            {/* <div>{index }</div> */}
-                            {/* <td>{item.hardwerEntrada}</td> */}
                             {item.products.map((p, i) => (
                                 <React.Fragment key={i}>
                                   <CardCover>
@@ -116,7 +114,7 @@ export default function Processing(){
                                     <Btn >
                                       <FaRegHeart />
                                     </Btn>{" "}
-                                    <Link to="/detail">
+                                    <Link to={`/detail/${p.id}`}>
                                     <Btn>
                                       <FaRegEye />                    
                                     </Btn>{" "}
