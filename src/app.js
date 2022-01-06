@@ -13,6 +13,7 @@ import AddProduct from './Pages/AddProduct/AddProduct';
 import Finish from './Pages/Finish/Finish';
 import Footer from "./Components/Shared/Footer";
 import Profile from "./Pages/Profile/Profile";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/output" element={<Output />} />
         <Route path="/processing" element={<Processing />} />
         <Route path="/storage" element={<Storage />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
       <Footer />
