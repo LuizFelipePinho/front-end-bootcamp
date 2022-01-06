@@ -53,7 +53,7 @@ export default function Footer() {
 				<div class="col-md-12 text-center">
 					<span className="copyright">
 						Copyright ©2021 All rights reserved | Made with{" "}
-						<BsSuitHeartFill /> by Equipe 04
+						<BsSuitHeartFill />
 					</span>
 				</div>
 			</div>
