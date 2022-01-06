@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const apiUrl = "https://back-end-brech-tech.herokuapp.com/auth/login";
 
+// axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
+
 const authLogin = {
 
     async authenticate(data) {
