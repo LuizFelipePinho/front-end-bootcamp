@@ -5,6 +5,7 @@ import axios from 'axios'
 import Product from "./Gallery/Card/Card";
 import Navbar from "../Components/Navbar/Navbar";
 
+import Input from '../Components/Products/Input'
 
 export default function Pages() {
   const [produtos, setProdutos] = useState([]) ;
@@ -40,6 +41,10 @@ export default function Pages() {
              }
       </Gallery>
       
+      
+      {/* <HotDeal /> */}
+      {/* <Input /> */}
+     
     </div>
   );
 }

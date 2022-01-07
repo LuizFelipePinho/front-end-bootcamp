@@ -1,7 +1,6 @@
 import { Card, Row, Col, Button } from "react-bootstrap";
 import { FaRegHeart, FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// import product01 from "./img/product01.png";
 
 import './CardVendor.css'
 

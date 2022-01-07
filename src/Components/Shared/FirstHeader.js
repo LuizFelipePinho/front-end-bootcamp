@@ -21,7 +21,7 @@ export default function Header() {
             <Link to="/login">
               <li class="nav-item">
               <p class="nav-link active">
-                  <FaRegUser className="icon" /> I want to buy !
+                  <FaRegUser className="icon" /> Register
                 </p>
               </li>
             </Link>
