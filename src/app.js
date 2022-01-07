@@ -1,23 +1,23 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Components/Shared/Header";
 import Home from "./Pages/Home";
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import Input from './Components/Products/Input';
-import Output from './Components/Products/Output'
-import Processing from './Components/Products/Processing';
-import Storage from "./Components/Products/Storage";
-import Detail from './Components/Products/ProductDetail';
+import Input from './Pages/Product/Categories/Input';
+import Output from './Pages/Product/Categories/Output'
+import Processing from './Pages/Product/Categories/Processing';
+import Storage from "./Pages/Product/Categories/Storage";
+import Detail from './Pages/Product/ProductDetail';
 import Cart from './Pages/Cart/Cart';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import Finish from './Pages/Finish/Finish';
 import Footer from "./Components/Shared/Footer";
 import Profile from "./Pages/Profile/Profile";
+import Navbar3 from "./Components/Navbar/Navbar";
 
 function App() {
   return (
     <BrowserRouter>
-     <Header />
+     <Navbar3 />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

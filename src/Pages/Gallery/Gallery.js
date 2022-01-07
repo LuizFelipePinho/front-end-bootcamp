@@ -1,20 +1,40 @@
-import "./Gallery.css";
+import styled from "styled-components";
 
-import Card from "./Card";
 
-export default function Gallery() {
-  return (
-    <nav className="container">
-      <div class="col-md-12">
-        <div class="section-title">
-          <h3 class="title">New Products</h3>
-        </div>
-      </div>
+const List = styled.div`
+  width: 100vw;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const CardList = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   
-          <div className="card">
-            <Card />
-          </div>
+`;
+
+const Text = styled.div`
+ 
+`;
+
+
+const Container = (props) => {
+    return (
+      
+      
+        <List>
+         <Text>
+         <h2 className='container-title'>{props.title}</h2>
+         </Text>
+          <CardList>
+            {props.children}
+          </CardList>
+        </List>
        
-    </nav>
-  );
-}
+     )
+  };
+  export default  Container;
