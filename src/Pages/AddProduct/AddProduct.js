@@ -51,7 +51,11 @@ export default function AddProduct(props)  {
     // const token = localStorage.dataLogin['token'];
     // console.log(token);
     // const token = localStorage.setItem('dataLogin', JSON.stringify);
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvYW92aXRvcmdvbWVzOTVAZ21haWwuY29tIiwiaWF0IjoxNjQxNDc0MDcwLCJleHAiOjE2NDE0Nzc2NzB9.tb2ss-BbMRKriVO-qHawYHeluGL3GQPPsGTLALeHDDc'
+    const dataUser = authLogin.getDataUser();
+    // const token = localStorage.dataLogin['token'];
+    // console.log(token);
+    // const token = localStorage.setItem('dataLogin', JSON.stringify);
+    const token = dataUser.token;
     const config = {
       headers: {
         Authorization: `Bearer ${token}` }
