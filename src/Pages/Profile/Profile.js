@@ -10,7 +10,13 @@ export default function Profile() {
   const [user, setUser] = useState({});
   const [notLogged, setNotLogged] = useState(true);
 
-  const dataTypeUser = (data) => {
+  const dataTypeUser = () => {
+    const data = authLogin.getDataUser();
+
+    if(!data) {
+      return false 
+    }
+
     const isVendor = data.hasOwnProperty('vendedor');
 
     if(isVendor) { 
@@ -35,18 +41,22 @@ export default function Profile() {
 
   useEffect(() => {
 
-    const dataUser = authLogin.getDataUser();
 
-    const dataStorage = dataTypeUser(dataUser);
+    const dataStorage = dataTypeUser();
 
-    authProfile.getProfile(dataStorage)
-    .then(response => {
-      setUser(response.data)
-      setNotLogged(false)
+    if(dataStorage) {
+      console.log(dataStorage);
 
-
+      authProfile.getProfile(dataStorage)
+      .then(response => {
+        setUser(response.data)
+        setNotLogged(false)
     })
     .catch( (err) => console.log(err))
+
+    } 
+    setNotLogged(true)
+
   }, [])
 
   return (
