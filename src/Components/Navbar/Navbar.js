@@ -14,7 +14,8 @@ const Navbar = () => {
         <span />
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <MenuLink href="">login</MenuLink>
+        <MenuLink href="/login">login</MenuLink>
+        <MenuLink href="/profile">profile</MenuLink>
         <MenuLink href="">outra </MenuLink>
         <MenuLink href="">categories</MenuLink>
         <MenuLink href="">cart</MenuLink>
