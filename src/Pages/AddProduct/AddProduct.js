@@ -11,7 +11,7 @@ export default function AddProduct(props)  {
   const [typeHard, setTypeHard] = useState('');
   const [modelHard, setModelHard] = useState('');
   const [priceHard, setPriceHard] = useState('');
-  const [yearuseHard, setYearUseHard] = useState('');
+  const [yearuseHard, setYearUseHard] = useState(0);
   const [productPhotosHard, setProductPhotosHard] = useState('');
   const [videoHard, setVideoHard] = useState('');
   const [usedHard, setUsedHard] = useState('');
@@ -23,45 +23,32 @@ export default function AddProduct(props)  {
       typeHard: typeHard,
       modelHard: modelHard,
       priceHard: priceHard,
-      yearuseHard: yearuseHard,
+      yearuseHard: parseInt(yearuseHard),
       productPhotosHard: productPhotosHard,
       videoHard:videoHard,
       usedHard: usedHard,
     }
-
-  //   const [mounted, setMounted] = useState(false);
-
-  //   useEffect( () => {
-  //     setMounted(true)
-
-  //     if(localStorage.token){
-  //       const token = localStorage.dataLogin;
-  //       const config = {
-  //     headers: { Authorization: `Bearer ${token}` }
-  //     }
-      
-  //     axios.post('product/create', product,
-  //     config)
-  //     .then(reponse => console.log(reponse))
-  //     }
-
-  //   }, [mounted]);
-  // }
-    // const dataUser = authLogin.getDataUser();
-    // const token = localStorage.dataLogin['token'];
-    // console.log(token);
-    // const token = localStorage.setItem('dataLogin', JSON.stringify);
+    // const product = {
+    //   typeHard: "storage",
+    //   modelHard: "Teste storage",
+    //   priceHard: "140.00",
+    //   yearuseHard: 3,
+    //   productPhotosHard: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRSV8bBzi5zthRO5QNAJNmgPhX7yqF8_GwhpoqIZvH6dPzAFvna2g35bGK9lCOfzbiYmYf0L7MwWg&usqp=CAc",
+    //   videoHard: "https://www.youtube.com/watch?v=pMpXlyBBr3o&ab_channel=MultiPapo",
+    //   usedHard: "second"
+    // }
+  
+    console.log(product)
+  
     const dataUser = authLogin.getDataUser();
-    // const token = localStorage.dataLogin['token'];
-    // console.log(token);
-    // const token = localStorage.setItem('dataLogin', JSON.stringify);
+
+
     const token = dataUser.token;
     const config = {
       headers: {
         Authorization: `Bearer ${token}` }
     }  
       
-    console.log(product)
     console.log(config)
     
     const res = await axios.post('product/create', product,
