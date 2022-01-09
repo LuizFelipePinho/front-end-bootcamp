@@ -1,8 +1,13 @@
 import { Row } from "react-bootstrap";
 import CardUnique from '../../Components/CardVendor/CardVendor';
 import './ProfileInfo.css'
+import { useState, useEffect } from 'react';
 
 const ProfileInfo = (props) => {
+
+    const [ data, setData ] = useState(props.user) 
+
+
 
     return(
         <div className="container-profile-info">
@@ -11,7 +16,7 @@ const ProfileInfo = (props) => {
             <span>Email: {props.user.email}</span>
             <span>CPF: {props.user.cpf}</span>
             <Row xs={1} md={6} className="g-4">
-            { props.user.products.map( (prod) => <CardUnique data={prod}/>) }
+            { data.products.map( (prod) => <CardUnique key={prod.id} data={prod}/>) }
             </Row>
         </div>
     )

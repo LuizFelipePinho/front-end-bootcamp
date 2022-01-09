@@ -36,6 +36,8 @@ function App() {
         <Route path="/storage" element={<Storage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/detail/:id" element={<Detail />} />
+        {/* <Route path="/detail/:id" element={<Detail />} /> */}
+
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,25 +1,26 @@
 import { Card, Row, Col, Button } from "react-bootstrap";
 import { FaRegHeart, FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import ButtonDel from "./ButtonDel/ButtonDel";
+
 
 import './CardVendor.css'
 
-const CardUnique = (props) => {
+const CardUnique = ({data}) => {
 
-    // const [productPhotosHard, modelHard] = data
 
     return (
-        <div className="containerCardVendor">
+        <div className="containerCardVendor" >
             
             <Col>
                 <Card>
-                <Card.Img variant="top" src={props.data.productPhotosHard} />
+                <Card.Img variant="top" src={data.productPhotosHard} />
                 <Card.Body className="card__body">
                     {/* <Card.Title align="center" className="card__title">
                     CATEGORY
                     </Card.Title> */}
                     <Card.Text className="card__title">
-                    {props.data.modelHard}
+                    {data.modelHard}
                     </Card.Text>
                     <>
                     {/* <Button variant="danger" align="center">
@@ -35,6 +36,8 @@ const CardUnique = (props) => {
                         Add To Cart
                         </Button>{" "}
                     </Link> */}
+                 
+                    <ButtonDel data={data} />
                     </>
                 </Card.Body>
                 </Card>
