@@ -1,101 +1,59 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import {
+       Nav,
+       Logo,
+       Img,
+       Hamburger,
+       Menu,
+       MenuLink,
+       Icon,
+       Login,
+       Container,
+       Header,
+       Bars,
+       Link
+} from "./Style"
 import IMG from "../../Assets/logo.png"
+
+
+
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Nav>
-      <Logo >
+    <Header>
+     <Logo >
         <Img src={IMG} alt="logo"/>
       </Logo>
+    <Nav>
+      <Container>
+      <MenuLink href="/login"><Login/></MenuLink>
+      <MenuLink href="/cart"><Icon/></MenuLink>
+      
+      </Container>
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
+        <span />
         <span />
         <span />
         <span />
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <MenuLink href="">login</MenuLink>
-        <MenuLink href="">outra </MenuLink>
-        <MenuLink href="">categories</MenuLink>
-        <MenuLink href="">cart</MenuLink>
+        <Link href="/register">Register</Link>
+        <Link href="/"> I want to sell!! </Link>
+        <Link href="">categories</Link>
       </Menu>
     </Nav>
+    
+    <Bars>
+    <Menu >
+        <MenuLink href="/register">Register</MenuLink>
+        <MenuLink href="/seller"> I want to sell!! </MenuLink>
+        <MenuLink href="/contact">Contact</MenuLink>
+        <MenuLink href="">categories</MenuLink>
+      </Menu>
+    </Bars>
+    </Header>
   );
 };
 
 export default Navbar;
-
-const MenuLink = styled.a`
-  padding: 1rem 2rem;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  color: #f8f6f6e3;
-  transition: all 0.3s ease-in;
-  font-size: 0.9rem;
-  &:hover {
-    color: #red;
-  }
-`;
-
-const Nav = styled.div`
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  background: black;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-`;
-
-const Logo = styled.div`
-color: #fff;
-display: flex;
-align-items: center;
-text-decoration: none;
-padding: 0 1rem;
-height: 100%;
-cursor: pointer;
-  span {
-    font-weight: 300;
-    font-size: 1.3rem;
-  }
-`;
-
-const Img = styled.img`
-width:7rem;
-height:5rem;
-`
-
-const Menu = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  @media (max-width: 768px) {
-    overflow: hidden;
-    flex-direction: column;
-    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
-    transition: max-height 0.3s ease-in;
-    width: 100%;
-  }
-`;
-
-const Hamburger = styled.div`
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  span {
-    height: 2px;
-    width: 25px;
-    background: #7b7fda;
-    margin-bottom: 4px;
-    border-radius: 5px;
-  }
-  @media (max-width: 768px) {
-    display: flex;
-  }
-`;

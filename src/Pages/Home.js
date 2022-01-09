@@ -5,25 +5,23 @@ import axios from 'axios'
 import Product from "./Gallery/Card/Card";
 import Navbar from "../Components/Navbar/Navbar";
 
-import Input from '../Components/Products/Input'
 
 export default function Pages() {
   const [produtos, setProdutos] = useState([]) ;
   
   const getData = async () => {
-   
     await axios.get('/product')
     .then(response => {
         setProdutos(response.data)
-       
     })
   }
+  
   useEffect(() => {
     getData()
   })
   return (
     <div>
-       <Navbar/>
+       <Navbar  />
       <HotDeal />
       < Gallery>
       {
