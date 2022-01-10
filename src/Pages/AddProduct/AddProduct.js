@@ -28,17 +28,8 @@ export default function AddProduct(props)  {
       videoHard:videoHard,
       usedHard: usedHard,
     }
-    // const product = {
-    //   typeHard: "storage",
-    //   modelHard: "Teste storage",
-    //   priceHard: "140.00",
-    //   yearuseHard: 3,
-    //   productPhotosHard: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRSV8bBzi5zthRO5QNAJNmgPhX7yqF8_GwhpoqIZvH6dPzAFvna2g35bGK9lCOfzbiYmYf0L7MwWg&usqp=CAc",
-    //   videoHard: "https://www.youtube.com/watch?v=pMpXlyBBr3o&ab_channel=MultiPapo",
-    //   usedHard: "second"
-    // }
+   
   
-    console.log(product)
   
     const dataUser = authLogin.getDataUser();
 
@@ -49,17 +40,13 @@ export default function AddProduct(props)  {
         Authorization: `Bearer ${token}` }
     }  
       
-    console.log(config)
     
     const res = await axios.post('product/create', product,
     config)
     .then(reponse => console.log(reponse))
     console.log(res)
     
-    
-
   }
-
 
   return (
     
