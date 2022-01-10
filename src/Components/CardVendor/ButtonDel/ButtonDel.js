@@ -12,21 +12,26 @@ const ButtonDel = ({data}) => {
       headers: {
         Authorization: `Bearer ${token}` }
     }  
+
     
+    const delCardDom = (id) => {
+        const cardSelected = document.getElementById(id)
+        cardSelected.style = `display: none;`
+        console.log(cardSelected)
+    }
+
+
+
     const delProduct = async () => {
 
         await axios.delete(`product/delete/${data.id}`, config)
         .then(reponse => {
-            console.log(reponse)
-
-            let card = document.getElementById(data.id);
-            console.log(card)
+            delCardDom(data.id)
+        
         } )
-        .catch((err) => console.log(err))
+        .catch((err) => alert(err))
 
     }
-
-
     return(
         <button onClick={(event) => delProduct(event)}>Deletar</button>
 

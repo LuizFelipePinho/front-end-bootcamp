@@ -10,13 +10,14 @@ const ProfileInfo = (props) => {
 
 
     return(
-        <div className="container-profile-info">
+        <div className="container-profile-info" key={props.user.id}>
         
             <h2>{props.user.name}</h2>
             <span>Email: {props.user.email}</span>
             <span>CPF: {props.user.cpf}</span>
             <Row xs={1} md={6} className="g-4">
             { data.products.map( (prod) => <CardUnique key={prod.id} data={prod}/>) }
+            
             </Row>
         </div>
     )

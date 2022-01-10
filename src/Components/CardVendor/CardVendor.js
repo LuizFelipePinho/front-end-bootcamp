@@ -6,21 +6,19 @@ import ButtonDel from "./ButtonDel/ButtonDel";
 
 import './CardVendor.css'
 
-const CardUnique = ({data}) => {
-
+const CardUnique = (props) => {
 
     return (
-        <div className="containerCardVendor" >
-            
-            <Col>
+            <Col id={props.data.id}>
                 <Card>
-                <Card.Img variant="top" src={data.productPhotosHard} />
+                <Card.Img variant="top" src={props.data.productPhotosHard} />
                 <Card.Body className="card__body">
                     {/* <Card.Title align="center" className="card__title">
                     CATEGORY
                     </Card.Title> */}
                     <Card.Text className="card__title">
-                    {data.modelHard}
+                    {props.data.modelHard}
+
                     </Card.Text>
                     <>
                     {/* <Button variant="danger" align="center">
@@ -37,13 +35,12 @@ const CardUnique = ({data}) => {
                         </Button>{" "}
                     </Link> */}
                  
-                    <ButtonDel data={data} />
+                    <ButtonDel data={props.data} />
                     </>
                 </Card.Body>
                 </Card>
             </Col>
-            
-        </div>
+      
     )
     
 }
