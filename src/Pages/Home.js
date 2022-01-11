@@ -8,18 +8,26 @@ import Input from '../Components/Products/Input'
 
 export default function Pages() {
   const [produtos, setProdutos] = useState([]) ;
-  
+  const [getApi, setgetApi] = useState(false) ;
+
+
   const getData = async () => {
    
     await axios.get('/product')
     .then(response => {
         setProdutos(response.data)
+        setgetApi(true)
        
     })
   }
+
   useEffect(() => {
-    getData()
-  })
+    if(!getApi) {
+      getData()
+    }
+
+  }, [getApi])
+
   return (
     <div>
       <HotDeal />
