@@ -3,7 +3,6 @@ import Gallery from "./Gallery/Gallery";
 import HotDeal from "./HotDeal/HotDeal";
 import axios from 'axios'
 import Product from "./Gallery/Card/Card";
-import Navbar from "../Components/Navbar/Navbar";
 
 import Input from '../Components/Products/Input'
 
@@ -23,9 +22,8 @@ export default function Pages() {
   })
   return (
     <div>
-       <Navbar/>
       <HotDeal />
-      < Gallery>
+      <Gallery>
       {
                produtos.map(product => (
                  <Product

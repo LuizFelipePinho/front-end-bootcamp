@@ -1,8 +1,18 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "./SecHeader.css";
 import { Link } from "react-router-dom";
 import logo from "./img/logo.png";
 
 export default function Navbar() {
+
+  // const handleForm = (event) => {
+  //   event.preventDefault()
+  //   console.log(event.target)
+
+  // }
+
+
   return (
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
@@ -12,14 +22,16 @@ export default function Navbar() {
             <img src={logo} />
           </a>
         </Link>
-        <form class="d-flex">
+        {/* <form class="d-flex" onSubmit={handleForm}>
           <select
             class="form-select form-select-sm"
-            aria-label=".form-select-sm example">
-            <option selected>Select...</option>
-            <option value="Notebooks">Notebooks</option>
-            <option value="Acessories">Acessories</option>
-            <option value="Gamer">Gamer Experience</option>
+            aria-label=".form-select-sm example"> */}
+            {/* <option selected>Select...</option> */}
+            {/* <option value="Input">Input</option>
+            <option value="Output">Output</option>
+            <option value="Processing">Processing</option>
+            <option value="Storage">Storage</option>
+
           </select>
 
           <input
@@ -31,7 +43,7 @@ export default function Navbar() {
           <button class="btn btn-danger" type="submit">
             Search
           </button>
-        </form>
+        </form> */}
       </div>
     </nav>
   );

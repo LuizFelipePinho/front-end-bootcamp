@@ -16,11 +16,13 @@ import Profile from "./Pages/Profile/Profile";
 import Navbar3 from "./Components/Navbar/Navbar";
 import Contact from "./Pages/Contact/Contact";
 import AtProduct from "./Pages/AtProduct/AtProduct";
+// import Header from '../Components/Shared/Header'
+import Header from './Components/Shared/Header'
 
 function App() {
   return (
     <BrowserRouter>
-     <Navbar3 />
+     <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

@@ -42,7 +42,7 @@ export default function Seller() {
             sm={12}
             className="p-5 m-auto shadow-sm rounded-lg">
             <Form className="rounded p-4 p-sm-3" onSubmit={handleSubmit}>
-              <h3> Register Account</h3>
+              <h3> Register Account to sell</h3>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" placeholder="Type your Name" 
