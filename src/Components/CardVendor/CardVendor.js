@@ -2,7 +2,7 @@ import { Card, Row, Col, Button } from "react-bootstrap";
 import { FaRegHeart, FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ButtonDel from "./ButtonDel/ButtonDel";
-
+import ButtonAt from "./ButtonAt/ButtonAt";
 
 import './CardVendor.css'
 
@@ -34,7 +34,8 @@ const CardUnique = (props) => {
                         Add To Cart
                         </Button>{" "}
                     </Link> */}
-                 
+
+                    <ButtonAt data={props.data}/>
                     <ButtonDel data={props.data} />
                     </>
                 </Card.Body>

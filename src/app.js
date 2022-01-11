@@ -15,7 +15,7 @@ import Seller from "./Pages/Seller/Seller"
 import Profile from "./Pages/Profile/Profile";
 import Navbar3 from "./Components/Navbar/Navbar";
 import Contact from "./Pages/Contact/Contact";
-
+import AtProduct from "./Pages/AtProduct/AtProduct";
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
         <Route path="/storage" element={<Storage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/detail/:id" element={<Detail />} />
-        {/* <Route path="/detail/:id" element={<Detail />} /> */}
+        <Route path="/atproduct/:id" element={<AtProduct />} />
 
       </Routes>
       <Footer />
