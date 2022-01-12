@@ -14,12 +14,13 @@ export default function Pages() {
     await axios.get('/product')
     .then(response => {
         setProdutos(response.data)
+        console.log(response.data)
        
     })
   }
   useEffect(() => {
     getData()
-  })
+  },[])
   return (
     <div>
       <HotDeal />
