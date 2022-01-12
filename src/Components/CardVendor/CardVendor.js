@@ -7,7 +7,6 @@ import ButtonAt from "./ButtonAt/ButtonAt";
 import './CardVendor.css'
 
 const CardUnique = (props) => {
-
     return (
             <Col id={props.data.id}>
                 <Card>
@@ -34,6 +33,7 @@ const CardUnique = (props) => {
                         Add To Cart
                         </Button>{" "}
                     </Link> */}
+
 
                     <ButtonAt data={props.data}/>
                     <ButtonDel data={props.data} />
