@@ -1,5 +1,5 @@
 .profile {
-    padding: 2rem;
+    padding: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,3 +14,4 @@
     width: 8rem;
     border-radius: 5rem;
   }
+

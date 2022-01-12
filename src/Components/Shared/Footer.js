@@ -1,10 +1,5 @@
 import "./Footer.css";
-import {
-	BsSuitHeartFill,
-	BsInstagram,
-	BsFacebook,
-	BsTwitter,
-} from "react-icons/bs";
+import { BsSuitHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -17,7 +12,7 @@ export default function Footer() {
 							<h3 class="footer-title">Information</h3>
 							<ul class="footer-links">
 								<li>
-									<a href="#">About Us</a>
+									<a href="/about">About Us</a>
 								</li>
 								<li>
 									<Link to="/contact">Contact Us</Link>
@@ -44,7 +39,7 @@ export default function Footer() {
 							<h3 class="footer-title">Categories</h3>
 							<ul class="footer-links">
 								<li>
-									<a href="#">Products</a>
+									<a href="/">Products</a>
 								</li>
 							</ul>
 						</div>
@@ -52,7 +47,7 @@ export default function Footer() {
 				</div>
 				<div class="col-md-12 text-center">
 					<span className="copyright">
-						Copyright ©2021 All rights reserved | Made with{" "}
+						Copyright ©2022 All rights reserved | Made with{" "}
 						<BsSuitHeartFill />
 					</span>
 				</div>

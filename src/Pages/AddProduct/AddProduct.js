@@ -5,6 +5,10 @@ import '../Register/Register.css';
 import { useState } from 'react';
 import axios from 'axios';
 import authLogin from '../../api/authLogin';
+import { useNavigate } from "react-router-dom";
+  
+
+
 
 export default function AddProduct(props)  {
 
@@ -16,6 +20,7 @@ export default function AddProduct(props)  {
   const [videoHard, setVideoHard] = useState('');
   const [usedHard, setUsedHard] = useState('');
   const [description, setDescription ] = useState('');
+  const navigate = useNavigate();
 
 
   const clearInput = () => {
@@ -62,6 +67,8 @@ export default function AddProduct(props)  {
       console.log(reponse)
       alert("product added successfully")
       clearInput()
+      navigate('/profile')
+
     } )
     .catch((err) => console.log(err))
     

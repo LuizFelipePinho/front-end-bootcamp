@@ -1,10 +1,10 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Gallery from "./Gallery/Gallery";
 import HotDeal from "./HotDeal/HotDeal";
-import axios from 'axios'
+import axios from "axios";
 import Product from "./Gallery/Card/Card";
 
-import Input from '../Components/Products/Input'
+import Input from "../Components/Products/Input";
 
 export default function Pages() {
   const [produtos, setProdutos] = useState([]) ;

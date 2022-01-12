@@ -17,7 +17,8 @@ const ProfileInfo = (props) => {
             <h2>{props.user.name}</h2>
             <span>Email: {props.user.email}</span>
             <span>CPF: {props.user.cpf}</span>
-            <ButtonRedirect />
+            { props.user.role === "VENDOR" ?  <ButtonRedirect /> : ''}
+            
             <Row xs={1} md={6} className="g-4">
             { data.products.map( (prod) => <CardUnique key={prod.id} data={prod}/>) }
             
