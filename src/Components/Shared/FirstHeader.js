@@ -13,7 +13,7 @@ export default function FirstHeader() {
 		<nav class="header navbar-expand-lg navbar-dark bg-dark ">
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-					<Link to="/register">
+					<Link to="/seller">
 						<li class="nav-item">
 							<p class="nav-link active">
 								<FaUserAstronaut className="icon" /> I want to
@@ -21,7 +21,7 @@ export default function FirstHeader() {
 							</p>
 						</li>
 					</Link>
-					<Link to="/Register">
+					<Link to="/register">
 						<li class="nav-item">
 							<p class="nav-link active">
 								<FaRegUser className="icon" /> Register

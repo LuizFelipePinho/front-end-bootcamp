@@ -5,6 +5,10 @@ import '../Register/Register.css';
 import { useState } from 'react';
 import axios from 'axios';
 import authLogin from '../../api/authLogin';
+import { useNavigate } from "react-router-dom";
+  
+
+
 
 export default function AddProduct(props)  {
 
@@ -15,6 +19,21 @@ export default function AddProduct(props)  {
   const [productPhotosHard, setProductPhotosHard] = useState('');
   const [videoHard, setVideoHard] = useState('');
   const [usedHard, setUsedHard] = useState('');
+  const [description, setDescription ] = useState('');
+  const navigate = useNavigate();
+
+
+  const clearInput = () => {
+    setTypeHard('')
+    setModelHard('')
+    setPriceHard('')
+    setYearUseHard('')
+    setProductPhotosHard('')
+    setVideoHard('')
+    setUsedHard('')
+    setDescription('')
+  }
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,6 +46,7 @@ export default function AddProduct(props)  {
       productPhotosHard: productPhotosHard,
       videoHard:videoHard,
       usedHard: usedHard,
+      description: description,
     }
    
   
@@ -43,8 +63,14 @@ export default function AddProduct(props)  {
     
     const res = await axios.post('product/create', product,
     config)
-    .then(reponse => console.log(reponse))
-    console.log(res)
+    .then(reponse => {
+      console.log(reponse)
+      alert("product added successfully")
+      clearInput()
+      navigate('/profile')
+
+    } )
+    .catch((err) => console.log(err))
     
   }
 
@@ -64,6 +90,7 @@ export default function AddProduct(props)  {
           <Form.Group className="mb-3" controlId="formBasicEmail" required>
             <Form.Label>Product Type:</Form.Label>
             <Form.Control type="text" placeholder="Ex: Video Card " 
+            value={typeHard}
             onChange={event => setTypeHard(event.target.value)}
             />           
           </Form.Group>
@@ -71,6 +98,8 @@ export default function AddProduct(props)  {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Model:</Form.Label>
             <Form.Control type="text" placeholder="Ex: Galax" 
+            value={modelHard}
+
             onChange={event => setModelHard(event.target.value)}
             />           
           </Form.Group>
@@ -78,6 +107,7 @@ export default function AddProduct(props)  {
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Price</Form.Label>
             <Form.Control type="text" placeholder="Product's price" 
+            value={priceHard}
             onChange={event => setPriceHard(event.target.value)}
             />
           </Form.Group>
@@ -85,6 +115,7 @@ export default function AddProduct(props)  {
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Years of Use:</Form.Label>
             <Form.Control type="text" placeholder="" 
+            value={yearuseHard}
             onChange={event => setYearUseHard(event.target.value)}
             />
           </Form.Group>
@@ -92,6 +123,7 @@ export default function AddProduct(props)  {
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Image Link:</Form.Label>
             <Form.Control type="text" placeholder="Upload image here" 
+            value={productPhotosHard}
             onChange={event => setProductPhotosHard(event.target.value)}
             />
           </Form.Group>
@@ -99,6 +131,7 @@ export default function AddProduct(props)  {
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Video's Link:</Form.Label>
             <Form.Control type="text" placeholder="Upload link here" 
+            value={videoHard}
             onChange={event => setVideoHard(event.target.value)}
             />
           </Form.Group>
@@ -106,7 +139,17 @@ export default function AddProduct(props)  {
           <Form.Group className="mb-3" controlId="">
             <Form.Label>How many persons owned this product?</Form.Label>
             <Form.Control type="text" placeholder="" 
+            value={usedHard}
             onChange={event => setUsedHard(event.target.value)}
+
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="">
+            <Form.Label>Description</Form.Label>
+            <Form.Control type="text" placeholder="" 
+            value={description}
+            onChange={event => setDescription(event.target.value)}
             />
           </Form.Group>
           

@@ -7,35 +7,50 @@ import Product from "./Gallery/Card/Card";
 import Input from "../Components/Products/Input";
 
 export default function Pages() {
-	const [produtos, setProdutos] = useState([]);
+  const [produtos, setProdutos] = useState([]) ;
+  const [getApi, setgetApi] = useState(false) ;
 
-	const getData = async () => {
-		await axios.get("/product").then((response) => {
-			setProdutos(response.data);
-		});
-	};
-	useEffect(() => {
-		getData();
-	});
-	return (
-		<div>
-			<HotDeal />
-			<Gallery>
-				{produtos.map((product) => (
-					<Product
-						id={product.id}
-						image={product.productPhotosHard}
-						title={product.modelHard}
-						type={product.typeHard}
-						preco={product.priceHard}
-						seller={product.Vendedor.name}
-						key={product.id}
-					/>
-				))}
-			</Gallery>
 
-			{/* <HotDeal /> */}
-			{/* <Input /> */}
-		</div>
-	);
+  const getData = async () => {
+   
+    await axios.get('/product')
+    .then(response => {
+        setProdutos(response.data)
+        setgetApi(true)
+       
+    })
+  }
+
+  useEffect(() => {
+    if(!getApi) {
+      getData()
+    }
+
+  }, [getApi])
+
+  return (
+    <div>
+      <HotDeal />
+      <Gallery>
+      {
+               produtos.map(product => (
+                 <Product
+                   id={product.id}
+                   image={product.productPhotosHard}
+                   title={product.modelHard}
+                   type={product.typeHard}
+                   preco={product.priceHard}
+                   seller={product.Vendedor.name}
+                   key={product.id}
+                 />
+               ))
+             }
+      </Gallery>
+      
+      
+      {/* <HotDeal /> */}
+      {/* <Input /> */}
+     
+    </div>
+  );
 }
