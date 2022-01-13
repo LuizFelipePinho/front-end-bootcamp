@@ -20,8 +20,6 @@ import Contact from "./Pages/Contact/Contact";
 import Navbar3 from "./Components/Navbar/Navbar";
 import AtProduct from "./Pages/AtProduct/AtProduct";
 
-
-
 function App() {
 	return (
 		<BrowserRouter>
@@ -47,9 +45,6 @@ function App() {
 			<Footer />
 		</BrowserRouter>
 	);
-
-
-
 }
 
 export default App;

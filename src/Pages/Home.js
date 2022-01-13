@@ -6,16 +6,16 @@ import Product from "./Gallery/Card/Card";
 import Navbar from "../Components/Navbar/Navbar";
 
 export default function Pages() {
-  const [produtos, setProdutos] = useState([]) ;
-  const [getApi, setgetApi] = useState(false) ;
+	const [produtos, setProdutos] = useState([]);
+	const [getApi, setgetApi] = useState(false);
 
+	const getData = async () => {
+		await axios.get("/product").then((response) => {
+			setProdutos(response.data);
+			setgetApi(true);
+		});
+	};
 
-  const getData = async () => {
-    await axios.get('/product')
-    .then(response => {
-        setProdutos(response.data)
-    })
-  }
   
   useEffect(() => {
     if(!getApi) {

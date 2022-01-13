@@ -1,12 +1,12 @@
-.btn_add {
+.btn-del {
 	border: none;
 	color: white;
-	padding: 14px 28px;
+
 	cursor: pointer;
 }
-.btn_add {
+.btn-del {
 	background-color: #f44336;
-} /* Red */
-.btn_add {
+}
+.btn-del {
 	background: #da190b;
 }

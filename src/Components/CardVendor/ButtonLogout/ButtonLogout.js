@@ -11,7 +11,7 @@ const ButtonLogout = () => {
     }
 
     return (
-        <button onClick={logout}>Logout</button>
+        <button onClick={logout} class="btn btn-danger px-4 rounded-pill">Logout</button>
     )
 }
 
