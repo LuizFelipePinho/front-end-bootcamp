@@ -39,7 +39,11 @@ function App() {
 				<Route path="/storage" element={<Storage />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/detail/:id" element={<Detail />} />
+
 				<Route path="/atproduct/:id" element={<AtProduct />} />
+
+        		<Route path="/atproduct/:id" element={<AtProduct />} />
+main
 				<Route path="/about" element={<About />} />
 			</Routes>
 			<Footer />

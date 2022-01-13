@@ -3,8 +3,7 @@ import Gallery from "./Gallery/Gallery";
 import HotDeal from "./HotDeal/HotDeal";
 import axios from "axios";
 import Product from "./Gallery/Card/Card";
-
-import Input from "../Components/Products/Input";
+import Navbar from "../Components/Navbar/Navbar";
 
 export default function Pages() {
 	const [produtos, setProdutos] = useState([]);
@@ -17,6 +16,7 @@ export default function Pages() {
 		});
 	};
 
+updateProfile
 	useEffect(() => {
 		if (!getApi) {
 			getData();
@@ -44,4 +44,46 @@ export default function Pages() {
 			{/* <Input /> */}
 		</div>
 	);
+
+  const getData = async () => {
+    await axios.get('/product')
+    .then(response => {
+        setProdutos(response.data)
+    })
+  }
+  
+  useEffect(() => {
+    if(!getApi) {
+      getData()
+    }
+
+  }, [getApi])
+
+  return (
+    <div>
+       {/* <Navbar  /> */}
+      <HotDeal />
+      <Gallery>
+      {
+               produtos.map(product => (
+                 <Product
+                   id={product.id}
+                   image={product.productPhotosHard}
+                   title={product.modelHard}
+                   type={product.typeHard}
+                   preco={product.priceHard}
+                   seller={product.Vendedor.name}
+                   key={product.id}
+                 />
+               ))
+             }
+      </Gallery>
+      
+      
+      {/* <HotDeal /> */}
+      {/* <Input /> */}
+     
+    </div>
+  );
+ main
 }

@@ -23,6 +23,7 @@ const CardUnique = (props) => {
 						>
 							<ButtonAt data={props.data} />
 
+               updateProfile
 							<ButtonDel data={props.data} />
 						</div>
 					</>
@@ -31,5 +32,17 @@ const CardUnique = (props) => {
 		</Col>
 	);
 };
+                    </Card.Text>
+                    <>
+                    <ButtonAt data={props.data}/>
+                    <ButtonDel data={props.data} />
+                    </>
+                </Card.Body>
+                </Card>
+            </Col>
+    )
+    
+}
+main
 
 export default CardUnique;

@@ -11,7 +11,7 @@ export default function Acessories() {
     
   return (
     <Display>
-       <Sidebar/>
+       {/* <Sidebar/> */}
        <Input/>
     </Display>
   );
