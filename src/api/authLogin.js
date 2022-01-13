@@ -30,6 +30,11 @@ const authLogin = {
             return null
         }
 
+    },
+
+    clearData() {
+        localStorage.removeItem('dataLogin');
+
     }
 
 }

@@ -1,38 +1,84 @@
+import React, { useState, useEffect } from "react";
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "./SecHeader.css";
 import { Link } from "react-router-dom";
-import logo from "./img/logo.png";
+import logo from "./img/logo1.png";
+import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
-  return (
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        
-        <Link to="/">
-          <a class="navbar-brand" href="#">
-            <img src={logo} />
-          </a>
-        </Link>
-        <form class="d-flex">
+ 
+function SecHeader() {
+	const navigate = useNavigate();
+
+	const [selectValue, setSelectValue] = useState('Input'); 
+
+	const list = [
+		{name: 'Input'},
+		{name: 'Output'},
+		{name: 'Processing'},
+		{name: 'Storage'},
+	  ];
+
+	const handleCreate = (e) => {
+		e.preventDefault()
+		// alert(selectValue)
+		
+		if(selectValue === "Input") {
+			navigate('/input')
+		} else if (selectValue === "Output"){
+			navigate('/output')
+
+		}else if (selectValue === "Processing") {
+			navigate('/processing')
+
+		} else if (selectValue === "Storage") {
+			navigate('/storage')
+
+		}
+		
+
+	  }
+	
+
+	return (
+		<nav class="navbar navbar-dark bg-dark">
+			<div class="container-fluid">
+				<Link to="/">
+					<a class="navbar-brand" href="#">
+						<img src={logo} className="logo_header" />
+					</a>
+				</Link>
+			<form class="d-flex">
           <select
-            class="form-select form-select-sm"
+		  	value={selectValue}
+			onChange={ event => setSelectValue(event.target.value)}
+            class="form-select form-select-sm spacing"
             aria-label=".form-select-sm example">
-            <option selected>Select...</option>
-            <option value="Notebooks">Notebooks</option>
-            <option value="Acessories">Acessories</option>
-            <option value="Gamer">Gamer Experience</option>
+            {
+				list.map( item => (
+					<option value={item.name}>{item.name}</option>
+				))
+			}
           </select>
 
-          <input
+          {/* <input
             class="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
-          />
-          <button class="btn btn-danger" type="submit">
+          /> */}
+          <button class="btn btn-danger" type="submit" onClick={handleCreate}>
             Search
           </button>
         </form>
-      </div>
-    </nav>
-  );
+
+
+
+		</div>
+
+		</nav>
+
+		
+	);
 }
+export default SecHeader;

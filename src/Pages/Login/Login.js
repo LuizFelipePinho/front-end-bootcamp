@@ -42,7 +42,7 @@ export default function Login() {
   useEffect( () => {
     if(user) {
       authLogin.saveDataUser(user)
-      // navigate('/profile')
+      navigate('/profile')
 
     }
   }, [navigate, user])
@@ -82,10 +82,10 @@ export default function Login() {
               <p></p>
 
               <p className="forgot-password text-right">
-                Don't have a login yet? <a href="/Register">I want to sell!</a>
+                Don't have a login yet? <a href="/seller">I want to sell!</a>
               </p>
               <p className="forgot-password text-right">
-                Don't have a login yet? <a href="/Register">I want to buy!</a>
+                Don't have a login yet? <a href="/Register">Register!</a>
               </p>
             </Form>
           </Col>

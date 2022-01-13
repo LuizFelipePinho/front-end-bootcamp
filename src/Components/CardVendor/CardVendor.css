@@ -3,4 +3,12 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    border: solid black 2px;
+    height: 200px;
+    width: 200px;
+}
+
+.card-box-vendor {
+    border: solid red 2px;
+
 }

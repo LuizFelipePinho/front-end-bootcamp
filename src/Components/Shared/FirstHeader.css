@@ -1,6 +1,5 @@
-.item {
-  font-size: 1rem;
-  text-decoration: none;
+.nav-item {
+	font-size: 1rem;
 }
 
 .icon {
@@ -8,7 +7,6 @@
   font-size: 1rem;
 }
 
-
-.firstHeader{
-  border-bottom: 3px solid #f8f6f6e3;
+a {
+  text-decoration: none;
 }

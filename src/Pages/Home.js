@@ -1,14 +1,15 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Gallery from "./Gallery/Gallery";
 import HotDeal from "./HotDeal/HotDeal";
-import axios from 'axios'
+import axios from "axios";
 import Product from "./Gallery/Card/Card";
 import Navbar from "../Components/Navbar/Navbar";
 
-
 export default function Pages() {
   const [produtos, setProdutos] = useState([]) ;
-  
+  const [getApi, setgetApi] = useState(false) ;
+
+
   const getData = async () => {
     await axios.get('/product')
     .then(response => {
@@ -17,13 +18,17 @@ export default function Pages() {
   }
   
   useEffect(() => {
-    getData()
-  })
+    if(!getApi) {
+      getData()
+    }
+
+  }, [getApi])
+
   return (
     <div>
-       <Navbar  />
+       {/* <Navbar  /> */}
       <HotDeal />
-      < Gallery>
+      <Gallery>
       {
                produtos.map(product => (
                  <Product

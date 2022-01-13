@@ -4,8 +4,15 @@ import { useState } from 'react';
 import "../Register/Register.css";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import axios from "axios";
-export default function Register() {
 
+import { useNavigate } from "react-router-dom";
+
+
+
+
+
+export default function Register() {
+  const navigate = useNavigate();
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState(''); 
     const [regiao, setRegiao] = useState('');  
@@ -13,25 +20,41 @@ export default function Register() {
     const [password, setPassword] = useState('');
     const [passwordconfirmation, setPasswordConfirmation] = useState('');
     
-    
+    const clearInput = () => {
+      setNome('')
+      setEmail('')
+      setRegiao('')
+      setCPF('')
+      setPassword('')
+      setPasswordConfirmation('')
+    }
 
 
     const handleSubmit = event => {
       event.preventDefault();
 
       const user = {
-        nome: nome,
+        name: nome,
         email: email,
-        regiao: regiao,
-        cpf: cpf,
         password: password,
-        passwordconfirmation: passwordconfirmation,        
+        passwordConfirmation: passwordconfirmation, 
+        cpf: cpf,
+        region: regiao,
+              
       }
 
-      axios.post('users/create', user)
-      .then(response => console.log(response))
+      axios.post('https://back-end-brech-tech.herokuapp.com/users/create', user)
+      .then((response) => {
+        console.log(response)
+        clearInput()
+        alert("user created successfully")
+        navigate('/login')
+
+      })
+      .catch( (err) => console.log(err))
 
     }
+
   return (
     <>
       <Container>
@@ -42,10 +65,11 @@ export default function Register() {
             sm={12}
             className="p-5 m-auto shadow-sm rounded-lg">
             <Form className="rounded p-4 p-sm-3" onSubmit={handleSubmit}>
-              <h3> Register Account</h3>
+              <h3> Register Account to buy</h3>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Type your Name" 
+                <Form.Control type="text" placeholder="Type your Name"
+                value={nome} 
                 onChange={event => setNome(event.target.value)}
                 />
               </Form.Group>
@@ -53,6 +77,7 @@ export default function Register() {
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" placeholder="Type your Email" 
+                value={email} 
                 onChange={event => setEmail(event.target.value)}
                 />
               </Form.Group>
@@ -60,6 +85,7 @@ export default function Register() {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Region</Form.Label>
                 <Form.Control type="text" placeholder="Type your Region" 
+                value={regiao} 
                 onChange={event => setRegiao(event.target.value)}
                 />
               </Form.Group>
@@ -67,6 +93,7 @@ export default function Register() {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>CPF</Form.Label>
                 <Form.Control type="text" placeholder="Type your CPF" 
+                value={cpf} 
                 onChange={event => setCPF(event.target.value)}
                 />
               </Form.Group>
@@ -75,6 +102,7 @@ export default function Register() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password" placeholder="Type your Password"
+                  value={password} 
                   onChange={event => setPassword(event.target.value)}
                 />
               </Form.Group>
@@ -82,6 +110,7 @@ export default function Register() {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Confirm Password</Form.Label>
                 <Form.Control type="password" placeholder="Confirm Password" 
+                value={passwordconfirmation} 
                 onChange={event => setPasswordConfirmation(event.target.value)}
                 />
               </Form.Group>        

@@ -1,65 +1,65 @@
-import './Profile.css';
-import { useState, useEffect } from 'react';
-import authLogin from '../../api/authLogin';
-import authProfile from '../../api/authProfile';
-import CardUnique from '../../Components/CardVendor/CardVendor';
-import { Row } from "react-bootstrap";
+import "./Profile.css";
+import { useState, useEffect } from "react";
+import authLogin from "../../api/authLogin";
+import authProfile from "../../api/authProfile";
+import ProfileInfo from "../../Components/ProfileInfo/ProfileInfo";
 
 export default function Profile() {
+	const [user, setUser] = useState({});
+	const [notLogged, setNotLogged] = useState(true);
 
-  const [user, setUser] = useState({});
-  const [mounted, setMounted] = useState(false);
-  const [notLogged, setNotLogged] = useState(true);
-  const dataUser = authLogin.getDataUser();
+	const dataTypeUser = () => {
+		const data = authLogin.getDataUser();
 
-  
+		if (!data) {
+			return false;
+		}
 
-  useEffect(() => {
-    setMounted(true)
+		const isVendor = data.hasOwnProperty("vendedor");
 
-    if(dataUser) {
+		if (isVendor) {
+			const dataVendor = {
+				id: data.vendedor.id,
+				role: data.vendedor.role,
+			};
 
-      
+			return dataVendor;
+		} else {
+			const dataUser = {
+				id: data.user.id,
+				role: data.user.role,
+			};
 
+			return dataUser;
+		}
+	};
 
-      const data = {
-        id: dataUser.vendedor.id,
-        role: dataUser.vendedor.role
-      }
+	useEffect(() => {
+		const dataStorage = dataTypeUser();
 
-      
-      // const dados = authProfile.getProfile(data) 
-      authProfile.getProfile(data)
-      .then(response => {
-        console.log(response.data)
-        setUser(response.data)
-        setNotLogged(false)
-      })
-      .catch( (err) => console.log(err))
-    }
+		if (dataStorage) {
+			console.log(dataStorage);
 
-  }, [dataUser])
+			authProfile
+				.getProfile(dataStorage)
+				.then((response) => {
+					setUser(response.data);
+					setNotLogged(false);
+				})
+				.catch((err) => console.log(err));
+		}
+		setNotLogged(true);
+	}, []);
 
-  return (
-    <div className='profile'>
-      {
-        !notLogged ? (
-          <>
-            <h2>{user.name}</h2>
-            <span>Email: {user.email}</span>
-            <span>CPF: {user.cpf}</span>
-            {/* <span>Tipo: {(user.role).toLowerCase()}</span> */}
-            {console.log(user.products)}
-
-            <Row xs={1} md={6} className="g-4">
-            { user.products.map( (prod) => <CardUnique data={prod}/>) }
-            </Row>
-          </>
-        ) : (
-          <h2>Sem dados do perfil, faça login</h2>
-        )
-      }
-    </div>
-    // <p>foi caralho</p>
-    )
+	return (
+		<div className="profile">
+			{!notLogged ? (
+				<>
+					<ProfileInfo user={user} />
+				</>
+			) : (
+				<h2>Sem dados do perfil, faça login</h2>
+			)}
+		</div>
+	);
 }
