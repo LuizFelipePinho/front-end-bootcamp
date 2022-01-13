@@ -3,8 +3,7 @@ import Gallery from "./Gallery/Gallery";
 import HotDeal from "./HotDeal/HotDeal";
 import axios from "axios";
 import Product from "./Gallery/Card/Card";
-
-import Input from "../Components/Products/Input";
+import Navbar from "../Components/Navbar/Navbar";
 
 export default function Pages() {
   const [produtos, setProdutos] = useState([]) ;
@@ -12,15 +11,12 @@ export default function Pages() {
 
 
   const getData = async () => {
-   
     await axios.get('/product')
     .then(response => {
         setProdutos(response.data)
-        setgetApi(true)
-       
     })
   }
-
+  
   useEffect(() => {
     if(!getApi) {
       getData()
@@ -30,6 +26,7 @@ export default function Pages() {
 
   return (
     <div>
+       {/* <Navbar  /> */}
       <HotDeal />
       <Gallery>
       {
