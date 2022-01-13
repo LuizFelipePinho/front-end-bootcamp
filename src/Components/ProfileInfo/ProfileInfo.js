@@ -4,29 +4,37 @@ import "./ProfileInfo.css";
 import img from "./ProfileImg.png";
 import { useState, useEffect } from "react";
 import ButtonRedirect from "../CardVendor/ButtonRedirect/ButtonRedirect";
+import ButtonLogout from "../CardVendor/ButtonLogout/ButtonLogout";
 
 const ProfileInfo = (props) => {
 	const [data, setData] = useState(props.user);
 
-	return (
-		<div class="card">
-			<div class="container-profile">
-				<h2 align="center">{props.user.name}</h2>
-				<h4 align="center">{props.user.email}</h4>
-				<h6 align="center">CPF: {props.user.cpf}</h6>
-				<div align="center">
-					{props.user.role === "VENDOR" ? <ButtonRedirect /> : ""}
-				</div>
-			</div>
-			<div align="center">
-				<Row xs={1} md={4} className="g-4" align="center">
-					{data.products.map((prod) => (
-						<CardUnique key={prod.id} data={prod} />
-					))}
-				</Row>
-			</div>
-		</div>
-	);
-};
+
+    
+
+    return(
+        <>
+        <div className="container-profile-info" key={props.user.id}>
+            <div className="infos-vendor">
+                <h2>{props.user.name}</h2>
+                <span>Email: {props.user.email}</span>
+                <span>CPF: {props.user.cpf}</span>
+                <div className="btn-vendor">
+                { props.user.role === "VENDOR" ?  <ButtonRedirect /> : ''}
+                <ButtonLogout />
+
+                </div>
+            </div>
+            
+            
+            <Row xs={1} md={6} className="g-4">
+            { data.products.map( (prod) => <CardUnique key={prod.id} data={prod}/>) }
+            
+            </Row>
+        </div>
+        </>
+    )
+
+}
 
 export default ProfileInfo;

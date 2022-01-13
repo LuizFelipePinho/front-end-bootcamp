@@ -10,7 +10,7 @@ const ButtonAt = ({data}) => {
     }
 
     return (
-        <button onClick={redirectinPag} class="btn btn-dark px-4 rounded-pill" >Update</button>
+        <button onClick={redirectinPag} class="btn btn-dark px-4 rounded-pill size-button" >Update</button>
     )
 }
 

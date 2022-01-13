@@ -9,7 +9,8 @@ const ButtonRedirect = () => {
 	};
 	return (
 		<button onClick={redirAddProduct} class="btn btn-dark px-4 rounded-pill" >
-			Adicionar produto
+			Add product
+
 		</button>
 	);
 };

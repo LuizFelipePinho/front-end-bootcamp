@@ -8,27 +8,26 @@ import "./CardVendor.css";
 
 const CardUnique = (props) => {
 	return (
-		<Col id={props.data.id}>
-			<Card>
+		<div id={props.data.id} className="containerCardVendor">
+			<Card className="card-box-vendor">
 				<Card.Img variant="top" src={props.data.productPhotosHard} />
 				<Card.Body className="card__body">
 					<Card.Text className="card__title">
 						{props.data.modelHard}
 					</Card.Text>
-					<>
-						<div
-							class="btn-group"
-							role="group"
-							aria-label="Basic mixed styles example"
-						>
-							<ButtonAt data={props.data} />
-
-							<ButtonDel data={props.data} />
-						</div>
-					</>
+						
 				</Card.Body>
+				<div
+					className="btn-group"
+					role="group"
+					aria-label="Basic mixed styles example"
+				>
+					<ButtonAt data={props.data} />
+
+					<ButtonDel data={props.data} />
+				</div>
 			</Card>
-		</Col>
+		</div>
 	);
 };
 

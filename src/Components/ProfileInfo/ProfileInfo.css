@@ -10,3 +10,23 @@
 .container-profile {
 	padding: 20px 40px;
 }
+
+.infos-vendor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	border-bottom: solid black 2px;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 5rem;
+}
+
+.btn-vendor {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2rem;
+	width: 20rem;
+
+}
+
