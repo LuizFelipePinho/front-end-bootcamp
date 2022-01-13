@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import './ButtonAt.css';
 
 const ButtonAt = ({data}) => {
     const navigate = useNavigate();
@@ -10,8 +10,8 @@ const ButtonAt = ({data}) => {
     }
 
     return (
-        <button onClick={redirectinPag}>Atualizar</button>
+        <button onClick={redirectinPag} class="btn btn-dark px-4 rounded-pill" >Update</button>
     )
 }
 
-export default ButtonAt
+export default ButtonAt;

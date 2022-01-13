@@ -55,6 +55,7 @@ export default function Profile() {
 		<div className="profile">
 			{!notLogged ? (
 				<>
+					
 					<ProfileInfo user={user} />
 				</>
 			) : (

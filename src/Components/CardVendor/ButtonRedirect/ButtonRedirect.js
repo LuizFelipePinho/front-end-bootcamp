@@ -1,18 +1,16 @@
-import './ButtonRedirect.css'
+import "./ButtonRedirect.css";
 import { useNavigate } from "react-router-dom";
 
-
 const ButtonRedirect = () => {
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 
-    const redirAddProduct = () => {
-        navigate('/addproduct')
-
-    }
-    return (
-            <button onClick={redirAddProduct} className="button-redirect">
-                Adicionar produto
-            </button>
-        )
-}
-export default ButtonRedirect
+	const redirAddProduct = () => {
+		navigate("/addproduct");
+	};
+	return (
+		<button onClick={redirAddProduct} class="btn btn-dark px-4 rounded-pill" >
+			Adicionar produto
+		</button>
+	);
+};
+export default ButtonRedirect;

@@ -20,8 +20,6 @@ import Contact from "./Pages/Contact/Contact";
 import Navbar3 from "./Components/Navbar/Navbar";
 import AtProduct from "./Pages/AtProduct/AtProduct";
 
-
-
 function App() {
 	return (
 		<BrowserRouter>
@@ -41,15 +39,12 @@ function App() {
 				<Route path="/storage" element={<Storage />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/detail/:id" element={<Detail />} />
-        <Route path="/atproduct/:id" element={<AtProduct />} />
+				<Route path="/atproduct/:id" element={<AtProduct />} />
 				<Route path="/about" element={<About />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>
 	);
-
-
-
 }
 
 export default App;
