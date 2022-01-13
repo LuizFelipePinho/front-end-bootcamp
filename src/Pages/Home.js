@@ -27,7 +27,7 @@ export default function Pages() {
   return (
     <div>
        {/* <Navbar  /> */}
-      <HotDeal />
+      <HotDeal days = "20" hours="1" minutes="45" />
       <Gallery>
       {
                produtos.map(product => (
