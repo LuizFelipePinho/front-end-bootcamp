@@ -23,7 +23,6 @@ const CardUnique = (props) => {
                 </Card.Body>
                 </Card>
             </Col>
-      
     )
     
 }

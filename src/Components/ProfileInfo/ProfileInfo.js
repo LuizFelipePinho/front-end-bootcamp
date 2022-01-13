@@ -3,6 +3,7 @@ import CardUnique from '../../Components/CardVendor/CardVendor';
 import './ProfileInfo.css'
 import { useState, useEffect } from 'react';
 import ButtonRedirect from "../CardVendor/ButtonRedirect/ButtonRedirect";
+import ButtonLogout from "../CardVendor/ButtonLogout/ButtonLogout";
 
 
 const ProfileInfo = (props) => {
@@ -12,6 +13,8 @@ const ProfileInfo = (props) => {
     
 
     return(
+        <>
+        <ButtonLogout />
         <div className="container-profile-info" key={props.user.id}>
         
             <h2>{props.user.name}</h2>
@@ -24,6 +27,7 @@ const ProfileInfo = (props) => {
             
             </Row>
         </div>
+        </>
     )
 
 }
