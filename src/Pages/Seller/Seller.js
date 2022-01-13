@@ -4,6 +4,7 @@ import { useState } from 'react';
 import "../Register/Register.css";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Seller() {
@@ -14,6 +15,8 @@ export default function Seller() {
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
     const [cpf, setCPF] = useState('');
     const [region, setRegion] = useState('');
+    const navigate = useNavigate();
+
 
 
     const handleSubmit = event => {
@@ -29,7 +32,13 @@ export default function Seller() {
       }
 
       axios.post('vendedor/register', seller)
-      .then(response => console.log(response))
+      .then(response => {
+          console.log(response)
+          alert("user created successfully")
+          navigate('/login')
+
+        })
+        
 
     }
   return (

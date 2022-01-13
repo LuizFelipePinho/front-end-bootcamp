@@ -1,26 +1,33 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Gallery from "./Gallery/Gallery";
 import HotDeal from "./HotDeal/HotDeal";
-import axios from 'axios'
+import axios from "axios";
 import Product from "./Gallery/Card/Card";
 
-import Input from '../Components/Products/Input'
+import Input from "../Components/Products/Input";
 
 export default function Pages() {
   const [produtos, setProdutos] = useState([]) ;
-  
+  const [getApi, setgetApi] = useState(false) ;
+
+
   const getData = async () => {
    
     await axios.get('/product')
     .then(response => {
         setProdutos(response.data)
-        console.log(response.data)
+        setgetApi(true)
        
     })
   }
+
   useEffect(() => {
-    getData()
-  },[])
+    if(!getApi) {
+      getData()
+    }
+
+  }, [getApi])
+
   return (
     <div>
       <HotDeal />

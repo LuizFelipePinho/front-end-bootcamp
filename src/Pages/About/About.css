@@ -1,0 +1,10 @@
+.container_about {
+    margin-top: 2px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.img_about{
+    width: 250px;
+}
