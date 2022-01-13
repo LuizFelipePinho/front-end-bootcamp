@@ -22,7 +22,6 @@
 
 .btn-group {
     display: flex;
-    margin: solid black 2px;
     padding: 1rem;
 }
 
