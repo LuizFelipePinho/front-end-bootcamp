@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Brechó Tech
+ 
+<img src="img\logo_brechotech.png"/>
+ 
+> This project represents a marketplace and it works as a thrift shop. The vendors offer second hand hardware and the buyers will be able to find hardware at affordable prices. This software was built to become a solution in the hardware market related to a computer component problem. Due to this lack of hardware on the market, the price of new products has become increasingly inaccessible to the majority of the Brazilian population that is interested in getting this type of product.
+This SPA consumes an API through AXIOS applying the following technologies : Nodejs, ReactApp and SQL as a database.
+ 
+You will be able to use this project downloading the zip file, or cloning it on your computer using Git. Run the `npm i` command inside the project folder on your computer (the folder containing the package.json file),  and the  `npm i` command will allow you to download the  project's dependencies.
+ 
+ 
+## Running the project
+It's necessary to download Node to your desktop to run this project. Check the following link to download:<https://nodejs.org/pt-br/download/>
+ 
+* Running the project on the terminal:
+ 
+```bash
+npm start
+ 
+```
+ 
+```bash
+npm test
+ 
+```
+ 
+ 
+ 
+ 
+ 
+*Building folder:
+ 
+Builds the app for production to the build folder.It correctly bundles React in production mode and optimizes the build for the best performance.
+ 
+The build is minified and the filenames include the hashes.
+ 
+```bash
+npm run build
+```
+```bash
+npm run eject
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## How to test the API?
+ 
+You can use the tools below:
+ 
+* Postman - `https://www.postman.com/`
+* Insomnia-`https://insomnia.rest/download`
+* Thunder Client (Visual Studio plugin)
+ 
+ 
+*This is the default test URL: <http://localhost:3000/>.
+ 
+This project is deployed on Heroku: 
+<https://front-end-brecho-tech.herokuapp.com/>
+ 
+## Code specifications
+ 
+It's possible to check all the specifications on the API on the swagger. Also you can test all the API routes:
+ 
+<https://back-end-brech-tech.herokuapp.com/api/>
+ 
+The project is integrated to Back-End application:
+<https://back-end-brech-tech.herokuapp.com/>
+ 
+ 
+ 
+ 
+ 
+## Developers responsible for building the project
+ 
+* Ana Santana as a Full-Stack developer was able to help to build the SPA application. Responsible mainly for creating the home and product page creation, also the design applying bootstrap.This developer was responsible to integrate this pages  to back-end 
+ 
+*Linkedin* 
+<https://www.linkedin.com/in/ana-santanazt/>
+ 
+* Beatriz Costa as a Back-End developer was able to help to build the API application.Responsible mainly for building the user and vendor routes, applying the JWT on these routes. Also, this developer created the project documentation.
+ 
+*Linkedin* 
+<https://www.linkedin.com/in/beatriz-costa-leal/>
+ 
+* João Vitor Gomes as a Full-Stack developer was able to help to build the SPA application.Responsible mainly for register page and  vendor page, also the integration of these pages to back-end and for creating the cart route.
+ 
+*Linkedin* <https://www.linkedin.com/in/jo%C3%A3o-vitor-gomes-244b7592/>
+ 
+ 
+* Luiz Felipe Pinho as a Full-Stack developer was able to help to build the API.Responsible mainly for building the profile route and cart route on API. This developer was responsible for integrating the mentioned routes to the Front-End.
+ 
+*Linkedin*
+ <https://www.linkedin.com/in/luiz-felipe-pinho>
+ 
+ 
+* Pedro Santos as a Full-Stack developer was able to help build the API application.Responsible mainly for building the categories route and product route on API. Also,this developer  related these routes  to the database.
+ 
+*Linkedin*
+ <https://www.linkedin.com/in/pedro-santos-dev/>
+ 
+ 
+Thank you for visiting our project. You are always most welcome!
+ 
