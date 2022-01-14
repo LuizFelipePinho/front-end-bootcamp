@@ -9,7 +9,7 @@ export default function Header() {
       <React.StrictMode>
         <FirstHeader />
         <SecHeader />
-        {/* <ThirdHeader /> */}
+        <ThirdHeader />
       </React.StrictMode>
     </div>
   );

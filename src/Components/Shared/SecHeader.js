@@ -6,43 +6,36 @@ import { Link } from "react-router-dom";
 import logo from "./img/logo1.png";
 import { useNavigate } from "react-router-dom";
 
- 
 function SecHeader() {
 	const navigate = useNavigate();
 
-	const [selectValue, setSelectValue] = useState('Input'); 
+	const [selectValue, setSelectValue] = useState("Input");
 
 	const list = [
-		{name: 'Input'},
-		{name: 'Output'},
-		{name: 'Processing'},
-		{name: 'Storage'},
-	  ];
+		{ name: "Input" },
+		{ name: "Output" },
+		{ name: "Processing" },
+		{ name: "Storage" },
+	];
 
 	const handleCreate = (e) => {
-		e.preventDefault()
+		e.preventDefault();
 		// alert(selectValue)
-		
-		if(selectValue === "Input") {
-			navigate('/input')
-		} else if (selectValue === "Output"){
-			navigate('/output')
 
-		}else if (selectValue === "Processing") {
-			navigate('/processing')
-
+		if (selectValue === "Input") {
+			navigate("/input");
+		} else if (selectValue === "Output") {
+			navigate("/output");
+		} else if (selectValue === "Processing") {
+			navigate("/processing");
 		} else if (selectValue === "Storage") {
-			navigate('/storage')
-
+			navigate("/storage");
 		}
-		
-
-	  }
-	
+	};
 
 	return (
 		<nav class="navbar navbar-dark bg-dark">
-			<div class="container-fluid">
+			<div class="container-fluid ">
 				<Link to="/">
 					<a class="navbar-brand" href="#">
 						<img src={logo} className="logo_header" />
@@ -71,8 +64,6 @@ function SecHeader() {
 		</div>
 
 		</nav>
-
-		
 	);
 }
 export default SecHeader;
