@@ -7,10 +7,11 @@ import { Container, Card, CardCover, CardContent, ItemText, Img, NameProduct,Pri
 
 
 
-export default function Processing(){
+export default function Processing(props){
 
     const [category, setCategory] = useState([]);
 
+    
     const getData = async () => {
       await axios.get('/categorias/output')
       .then(response => {
@@ -36,28 +37,27 @@ export default function Processing(){
                                         {p.modelHard}
                                     </NameProduct>
                                     <ItemText>
-                                    {p.typeHard}
+                                    Hardware type: {p.typeHard}
                                     </ItemText>
-                                    <ItemText>
-                                      Vendido por: 
-                                      Vendedor
+                                    <ItemText>                                    
+                                      Sold by: {p.Vendedor.email}
                                     </ItemText>
                                     <Price>
-                                      {p.priceHard}
+                                      Prince: $ {p.priceHard}
                                     </Price>
                                     <ContainerBtn>
                                     <Btn >
                                       <FaRegHeart />
-                                    </Btn>{" "}
+                                    </Btn>
                                     <Link to={`/detail/${p.id}`}>
                                     <Btn>
                                       <FaRegEye />                    
-                                    </Btn>{" "}
+                                    </Btn>
                                     </Link>
                                     <Link to="/cart">
                                       <Btn >
                                         <FaShoppingCart/>
-                                      </Btn>{" "}
+                                      </Btn>
                                     </Link>
                                     </ContainerBtn>
                                     </CardContent>                     

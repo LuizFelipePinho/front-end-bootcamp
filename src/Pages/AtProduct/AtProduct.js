@@ -100,13 +100,27 @@ const AtProduct = (props) => {
           onSubmit={handleSubmit}
           >
             <h3> Product Register</h3>
-            <Form.Group className="mb-3" controlId="formBasicEmail" required>
+            {/* <Form.Group className="mb-3" controlId="formBasicEmail" required>
               <Form.Label>Product Type:</Form.Label>
               <Form.Control value={typeHard} type="text" placeholder="Ex: Video Card"
                
               onChange={event => setTypeHard(event.target.value)}
               />           
-            </Form.Group>
+            </Form.Group> */}
+
+            <Form.Group>
+							<Form.Select className="mb-3" controlId="formBasicEmail" required
+							onChange={event => setTypeHard(event.target.value)}>
+								<option>Product Type:</option>
+								<option value="Input">Input</option>
+								<option value="Output">Output</option>
+								<option value="Storage">Storage</option>
+								<option value="Processing">Processing</option>
+								
+							</Form.Select>
+							</Form.Group>
+
+
   
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Model:</Form.Label>

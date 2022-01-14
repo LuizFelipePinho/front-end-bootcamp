@@ -33,14 +33,12 @@ export default function Processing(){
                                         {p.modelHard}
                                     </NameProduct>
                                     <ItemText>
-                                    {p.typeHard}
+                                    Hardware type: {p.typeHard}
                                     </ItemText>
                                     <ItemText>
-                                      Vendido por:  
-                                      {p.Vendedor.email}
+                                    Sold by: {p.Vendedor.email}
                                     </ItemText>  
-                                    <Price>
-                                      {p.priceHard}
+                                    <Price>Prince: {p.priceHard}
                                     </Price>
                                     <ContainerBtn>
                                     <Btn >

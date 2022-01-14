@@ -18,7 +18,6 @@ const CardList = styled.div`
 `;
 
 const Text = styled.div`
- 
 `;
 
 

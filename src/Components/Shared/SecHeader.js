@@ -41,33 +41,28 @@ function SecHeader() {
 						<img src={logo} className="logo_header" />
 					</a>
 				</Link>
-				<form class="d-flex">
-					<select
-						value={selectValue}
-						onChange={(event) => setSelectValue(event.target.value)}
-						class="form-select form-select-sm spacing"
-						aria-label=".form-select-sm example"
-					>
-						{list.map((item) => (
-							<option value={item.name}>{item.name}</option>
-						))}
-					</select>
+			<form class="d-flex">
+          <select
+		  	value={selectValue}
+			onChange={ event => setSelectValue(event.target.value)}
+            class="form-select form-select-sm spacing"
+            aria-label=".form-select-sm example">
+            {
+				list.map( item => (
+					<option value={item.name}>{item.name}</option>
+				))
+			}
+          </select>
+          
+          <button class="btn btn-danger" type="submit" onClick={handleCreate}>
+            Search
+          </button>
+        </form>
 
-					{/* <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          /> */}
-					<button
-						class="btn btn-danger"
-						type="submit"
-						onClick={handleCreate}
-					>
-						Search
-					</button>
-				</form>
-			</div>
+
+
+		</div>
+
 		</nav>
 	);
 }
