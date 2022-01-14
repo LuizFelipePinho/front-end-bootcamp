@@ -78,47 +78,32 @@ export default function AddProduct(props) {
 							onSubmit={handleSubmit}
 						>
 							<h3> Product Register</h3>
-							<Form.Group
+							{/* <Form.Group
 								className="mb-3"
 								controlId="formBasicEmail"
 								required
-							>
-								<Form.Select aria-label="Default select example">
-									<option>Product Type:</option>
-									<option
-										value={typeHard}
-										onChange={(event) =>
-											setTypeHard(event.target.value)
-										}
-									>
-										Input
-									</option>
-									<option
-										value={typeHard}
-										onChange={(event) =>
-											setTypeHard(event.target.value)
-										}
-									>
-										Output
-									</option>
-									<option
-										value={typeHard}
-										onChange={(event) =>
-											setTypeHard(event.target.value)
-										}
-									>
-										Processing
-									</option>
-									<option
-										value={typeHard}
-										onChange={(event) =>
-											setTypeHard(event.target.value)
-										}
-									>
-										Storage
-									</option>
-								</Form.Select>
+							>	 */}
+							{/* </Form.Group>																
+								<Form.Group className="mb-3" controlId="formBasicEmail" required>
+									<Form.Label>Product Type:</Form.Label>
+									<Form.Control type="text" placeholder="Ex: Input, Output" 
+									onChange={event => setTypeHard(event.target.value)}
+									/> 								
+							</Form.Group> */}
+
+							<Form.Group>
+							<Form.Select className="mb-3" controlId="formBasicEmail" required
+							onChange={event => setTypeHard(event.target.value)}>
+								<option>Product Type:</option>
+								<option value="Input">Input</option>
+								<option value="Output">Output</option>
+								<option value="Storage">Storage</option>
+								<option value="Processing">Processing</option>
+								
+							</Form.Select>
 							</Form.Group>
+
+
 
 							<Form.Group
 								className="mb-3"

@@ -4,7 +4,7 @@ import HotDeal from "./HotDeal/HotDeal";
 import axios from "axios";
 import Product from "./Gallery/Card/Card";
 import Navbar from "../Components/Navbar/Navbar";
-
+import Title from '../Components/title/title'
 export default function Pages() {
 	const [produtos, setProdutos] = useState([]);
 	const [getApi, setgetApi] = useState(false);
@@ -28,7 +28,9 @@ export default function Pages() {
     <div>
        {/* <Navbar  /> */}
       <HotDeal />
-      <Gallery>
+      <Title />            
+      <Gallery >
+      
       {
                produtos.map(product => (
                  <Product
