@@ -47,7 +47,7 @@ function ProductDetail() {
 			<br />
 			<Row>
 				<Col>
-					<div class="embed-responsive embed-responsive-1by1">
+					{/* <div class="embed-responsive embed-responsive-1by1">
 						<iframe
 							width="400"
 							height="250"
@@ -57,7 +57,7 @@ function ProductDetail() {
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen
 						></iframe>
-					</div>
+					</div> */}
 				</Col>
 				<Col>
 					<Img
