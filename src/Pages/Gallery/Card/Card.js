@@ -24,14 +24,12 @@ export default function Product(props) {
                 {props.title}
             </NameProduct>
             <ItemText>
-            {props.type}
+            Hardware type: {props.type}
             </ItemText>
             <ItemText>
-              Vendido por: 
-              {props.seller}
+            Sold by: {props.seller}
             </ItemText>
-            <Price>
-              {props.preco}
+            <Price>Prince: $ {props.preco}
             </Price>
             <ContainerBtn>
             <Btn >
